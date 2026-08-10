@@ -105,7 +105,7 @@ function renderWeek(state) {
 
 function renderShopping(state) {
   const app = document.getElementById("app");
-  const { items, missing } = buildShoppingList(state);
+  const { byAisle, totalItems, missing } = buildShoppingList(state);
   shopChecked = {};
 
   const promotable = Object.values(state.suggestions)
@@ -120,11 +120,24 @@ function renderShopping(state) {
       </button>
     </div>`).join("");
 
-  const itemsHTML = items.map((item, i) => `
-    <div class="shop-item" id="si-${i}" onclick="toggleItem(${i})">
-      <div class="shop-cb"></div>
-      <div class="shop-name">${item}</div>
-    </div>`).join("");
+  let idx = 0;
+  const aislesHTML = byAisle.map(aisle => {
+    const itemsHTML = aisle.items.map(({ ingredient, dishes }) => {
+      const i = idx++;
+      const dishHint = dishes.join(", ");
+      return `<div class="shop-item" id="si-${i}" onclick="toggleItem(${i})">
+        <div class="shop-cb"></div>
+        <div class="shop-info">
+          <div class="shop-name">${ingredient}</div>
+          <div class="shop-from">${dishHint}</div>
+        </div>
+      </div>`;
+    }).join("");
+    return `<div class="shop-aisle">
+      <div class="shop-aisle-title">${aisle.emoji} ${aisle.name}</div>
+      ${itemsHTML}
+    </div>`;
+  }).join("");
 
   app.innerHTML = `
     <div class="page active" id="page-shop">
@@ -132,9 +145,9 @@ function renderShopping(state) {
         <button class="btn-back" onclick="onBackToWeek()">← Volver</button>
       </div>
       <div class="shop-title">Lista de la compra</div>
-      <div class="shop-subtitle">${items.length} ingredientes · semana del ${fmt_date(state.week_start)}</div>
+      <div class="shop-subtitle">${totalItems} ingredientes · semana del ${fmt_date(state.week_start)}</div>
       ${promosHTML}
-      <div class="shop-list" style="margin-top:12px">${itemsHTML}</div>
+      <div class="shop-list" style="margin-top:12px">${aislesHTML}</div>
       ${missing.length ? `<p style="font-size:12px;color:var(--text-sub);padding:12px 20px">Sin ingredientes: ${missing.join(", ")}</p>` : ""}
       <button class="btn-new-week" onclick="onNewWeek()">+ Planificar nueva semana</button>
     </div>`;

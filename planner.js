@@ -251,25 +251,77 @@ function confirmWeek(state) {
   return state;
 }
 
+const AISLES = [
+  { name: "Verduras y frutas", emoji: "🥬", keywords: ["tomate","cebolla","lechuga","calabacín","pimiento","berenjena","espinaca","brócoli","guisante","zanahoria","judía verde","patata","limón","plátano","pepino","rúcula","espárrago","ajete","seta","champiñón","cogollo","puerro","ajo","perejil","albahaca","romero","tomillo","laurel","verdura","repollo","alcachofa","alcaparra","triguero","nabo"] },
+  { name: "Carne y aves",      emoji: "🥩", keywords: ["pollo","cerdo","ternera","carne","lomo","solomillo","cordero","pavo","conejo","lacón","butifarra","costilla","tapilla","filete","morcillo","cinta","osobuco","secreto","magret","pato","carrillera"] },
+  { name: "Pescado y marisco", emoji: "🐟", keywords: ["pescado","merluza","lenguado","rape","salmón","atún","bonito","gamba","almeja","calamar","mejillón","cigala","bogavante","boquerón","bacalao","dorada","lubina","gallo","melva","sardinilla","sepia","pulpo","mejillon","anchoa","berberecho","navaja","nécora","langosta","langostino","gula","anchoa"] },
+  { name: "Lácteos y huevos",  emoji: "🥚", keywords: ["huevo","queso","leche","nata","mantequilla","mozzarella","parmesano","yogur","bechamel","crema"] },
+  { name: "Pasta, arroz y legumbres", emoji: "🍝", keywords: ["pasta","arroz","fideo","cuscús","spaguetti","spaghetti","garbanzo","lenteja","alubia","judía blanca","legumbre","judión","placas"] },
+  { name: "Pan y masas",       emoji: "🥖", keywords: ["pan","masa","oblea","tortilla de trigo"] },
+  { name: "Conservas y embutidos", emoji: "🥫", keywords: ["chorizo","jamón","bacon","embutido","chistorra","salchicha","frankfurt","morcilla","tocino","anchoa en lata","melva en lata","sardinilla en lata","atún en","bonito en"] },
+];
+
+function getAisle(ingredient) {
+  const lower = ingredient.toLowerCase();
+  for (const aisle of AISLES) {
+    if (aisle.keywords.some(k => lower.includes(k))) return aisle.name;
+  }
+  return "Otros";
+}
+
 function buildShoppingList(state) {
   const dishes    = loadUserDishes();
   const discovery = loadUserDiscovery();
   const allDishes = { ...dishes, ...discovery };
-  const ingredients = new Set();
-  const missing = [];
+  const missing   = [];
+
+  // ingredient → Set of dish label strings
+  const ingredientDishes = {};
 
   for (const day of DAYS) for (const meal of MEALS) {
     const slot = state.days[day]?.[meal];
     if (!slot) continue;
 
-    for (const name of [slot.dish, slot.side].filter(Boolean)) {
-      const info = allDishes[name];
-      if (!info) { missing.push(name); continue; }
-      info.ingredients.forEach(i => { if (!PANTRY.has(i.toLowerCase())) ingredients.add(i); });
+    for (const dishName of [slot.dish, slot.side].filter(Boolean)) {
+      const info = allDishes[dishName];
+      if (!info) { missing.push(dishName); continue; }
+      const label = slot.side && dishName === slot.side
+        ? `${slot.dish} (acomp.)`
+        : slot.dish + (slot.side ? ` + ${slot.side}` : "");
+
+      info.ingredients.forEach(raw => {
+        if (PANTRY.has(raw.toLowerCase())) return;
+        if (!ingredientDishes[raw]) ingredientDishes[raw] = new Set();
+        ingredientDishes[raw].add(label);
+      });
     }
   }
 
-  return { items: [...ingredients].sort((a,b) => a.localeCompare(b, "es")), missing };
+  // Group by aisle
+  const aisleMap = {};
+  for (const [ingredient, dishSet] of Object.entries(ingredientDishes)) {
+    const aisle = getAisle(ingredient);
+    if (!aisleMap[aisle]) aisleMap[aisle] = [];
+    aisleMap[aisle].push({ ingredient, dishes: [...dishSet].sort() });
+  }
+
+  // Sort items within each aisle alphabetically
+  for (const aisle of Object.keys(aisleMap)) {
+    aisleMap[aisle].sort((a, b) => a.ingredient.localeCompare(b.ingredient, "es"));
+  }
+
+  // Return aisles in defined order
+  const aisleOrder = [...AISLES.map(a => a.name), "Otros"];
+  const byAisle = aisleOrder
+    .filter(name => aisleMap[name])
+    .map(name => ({
+      name,
+      emoji: AISLES.find(a => a.name === name)?.emoji || "🛒",
+      items: aisleMap[name],
+    }));
+
+  const totalItems = Object.keys(ingredientDishes).length;
+  return { byAisle, totalItems, missing };
 }
 
 function promoteDiscovery(name) {
