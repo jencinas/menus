@@ -37,12 +37,15 @@ function renderWeek(state) {
     const dayLabel = `${s.day} · ${MEAL_LABEL[s.meal]}`;
     const disc = loadUserDiscovery();
     const note = disc[s.new_dish]?.note || "";
+    const url  = disc[s.new_dish]?.url  || "";
+    const linkHTML = url ? `<a class="sugg-link" href="${url}" target="_blank" rel="noopener">Ver receta ↗</a>` : "";
 
     if (s.status === "accepted") {
       return `<div class="suggestion-banner">
         <div class="sugg-label">${label}</div>
         <div class="sugg-meta">${dayLabel}</div>
         <div class="sugg-dish">${s.new_dish}</div>
+        ${linkHTML}
         <div class="sugg-done">✓ Incorporada al menú</div>
       </div>`;
     }
@@ -53,6 +56,7 @@ function renderWeek(state) {
       <div class="sugg-meta">${dayLabel}</div>
       <div class="sugg-dish">${s.new_dish}</div>
       ${note ? `<div class="sugg-note">${note}</div>` : ""}
+      ${linkHTML}
       <div class="sugg-alt">En lugar de: <span>${s.known_alternative}</span></div>
       <div class="sugg-actions">
         <button class="btn-sugg-accept" onclick="onSuggAccept('${key}')">Probar</button>
