@@ -56,7 +56,7 @@ function pickDish(pool, meal, exclude, { elaborateOnly = false, season = null, a
   function ok(name, info) {
     if (!info.meals.includes(meal))                       return false;
     if (exclude.has(name))                                return false;
-    if (meal === "comida" && !info.solo)                  return false;
+    if (!info.solo)                                        return false;
     if (!(info.seasons || []).includes(season))           return false;
     if (elaborateOnly && !info.elaborate)                 return false;
     if (avoidProtein && info.protein === avoidProtein)    return false;
