@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Menús">
+  <meta name="theme-color" content="#2e7d5a">
+  <link rel="apple-touch-icon" href="/icons/icon-180.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <title>Menú Semanal</title>
+</head>
+<body>
+  <div id="app">
+    <div class="loading-screen">
+      <div class="spinner"></div>
+      <p>Cargando…</p>
+    </div>
+  </div>
+  <!-- order matters: data first, then logic, then UI -->
+  <script src="/data.js"></script>
+  <script src="/planner.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
