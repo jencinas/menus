@@ -86,7 +86,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "mixto",
-    "needs_side": false
+    "needs_side": true
   },
   "Arroz a la cubana": {
     "meals": [
@@ -447,7 +447,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "pescado",
-    "needs_side": false
+    "needs_side": true
   },
   "Calamares con calabac\u00edn": {
     "meals": [
@@ -627,7 +627,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "embutido",
-    "needs_side": false
+    "needs_side": true
   },
   "Cinta de lomo": {
     "meals": [
@@ -1377,7 +1377,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "pescado",
-    "needs_side": false
+    "needs_side": true
   },
   "Gambas": {
     "meals": [
@@ -1515,7 +1515,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "pescado",
-    "needs_side": false
+    "needs_side": true
   },
   "Hamburguesas": {
     "meals": [
@@ -1691,7 +1691,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "carne",
-    "needs_side": false
+    "needs_side": true
   },
   "Lac\u00f3n patata": {
     "meals": [
@@ -2989,25 +2989,6 @@ const DISHES = {
   },
   "Salchichas": {
     "meals": [
-      "cena"
-    ],
-    "category": "normal",
-    "elaborate": false,
-    "ingredients": [
-      "salchichas"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": true,
-    "protein": "embutido",
-    "needs_side": false
-  },
-  "Salchis": {
-    "meals": [
       "comida",
       "cena"
     ],
@@ -3024,7 +3005,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "embutido",
-    "needs_side": false
+    "needs_side": true
   },
   "Salmorejo": {
     "meals": [
@@ -3613,7 +3594,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "huevo",
-    "needs_side": false
+    "needs_side": true
   },
   "Tostada con embutido": {
     "meals": [
@@ -3670,7 +3651,7 @@ const DISHES = {
       "oto\u00f1o",
       "invierno"
     ],
-    "solo": false,
+    "solo": true,
     "protein": "mixto",
     "needs_side": false
   },
