@@ -10,34 +10,18 @@ function fmt_date(iso) {
   return new Date(iso + "T00:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "long" });
 }
 
-function progress(state) {
-  let total = 0, done = 0;
-  DAYS.forEach(d => MEALS.forEach(m => {
-    total++;
-    if (state.days[d]?.[m]?.accepted) done++;
-  }));
-  Object.values(state.suggestions).forEach(s => {
-    total++;
-    if (s.status !== "pending") done++;
-  });
-  return { total, done, pct: Math.round(done / total * 100) };
-}
-
 // ── Week page ─────────────────────────────────────────────────────────────────
 
 function renderWeek(state) {
-  const app = document.getElementById("app");
-  const { total, done, pct } = progress(state);
-  const allDone = done === total;
-  const dishes = loadUserDishes();
+  const app  = document.getElementById("app");
+  const disc = loadUserDiscovery();
 
   const suggHTML = Object.entries(state.suggestions).map(([key, s]) => {
     if (!s.new_dish) return "";
-    const label = key === "finde" ? "Sugerencia finde (elaborada)" : "Sugerencia entre semana";
+    const label    = key === "finde" ? "Sugerencia finde (elaborada)" : "Sugerencia entre semana";
     const dayLabel = `${s.day} · ${MEAL_LABEL[s.meal]}`;
-    const disc = loadUserDiscovery();
-    const note = disc[s.new_dish]?.note || "";
-    const url  = disc[s.new_dish]?.url  || "";
+    const note     = disc[s.new_dish]?.note || "";
+    const url      = disc[s.new_dish]?.url  || "";
     const linkHTML = url ? `<a class="sugg-link" href="${url}" target="_blank" rel="noopener">Ver receta ↗</a>` : "";
 
     if (s.status === "accepted") {
@@ -67,24 +51,26 @@ function renderWeek(state) {
 
   const daysHTML = DAYS.map(day => {
     const isWeekend = WEEKEND.has(day);
-    const badge = isWeekend ? `<span class="day-badge">Finde</span>` : "";
+    const badge     = isWeekend ? `<span class="day-badge">Finde</span>` : "";
+
     const rows = MEALS.map(meal => {
       const slot = state.days[day]?.[meal];
       if (!slot) return "";
-      const acc = slot.accepted;
       const isDisc = slot.source === "discovery";
-      return `<div class="meal-row ${acc ? "accepted" : ""}">
+      const sideHTML = slot.side ? `<div class="meal-side">+ ${slot.side}</div>` : "";
+      return `<div class="meal-row">
         <div class="meal-type">${MEAL_LABEL[meal]}</div>
         <div class="meal-center">
           <div class="meal-dish">${slot.dish}</div>
+          ${sideHTML}
           ${isDisc ? `<div class="meal-tag">★ Nuevo plato</div>` : ""}
         </div>
         <div class="meal-actions">
-          ${!acc ? `<button class="btn-reroll" title="Cambiar" onclick="onReroll('${day}','${meal}',this)">↻</button>` : ""}
-          <button class="btn-check ${acc ? "done" : ""}" onclick="onAccept('${day}','${meal}',this)" ${acc?"disabled":""}>✓</button>
+          <button class="btn-reroll" title="Cambiar" onclick="onReroll('${day}','${meal}',this)">↻</button>
         </div>
       </div>`;
     }).join("");
+
     return `<div class="day-card">
       <div class="day-header"><div class="day-name">${day}</div>${badge}</div>
       ${rows}
@@ -108,13 +94,8 @@ function renderWeek(state) {
         ${daysHTML}
       </div>
       <div class="bottom-bar">
-        <div class="progress-row">
-          <span>${done}/${total}</span>
-          <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
-          <span>${pct}%</span>
-        </div>
-        <button class="btn-confirm" onclick="onConfirm()" ${allDone?"":"disabled"}>
-          ${allDone ? "Confirmar y ver la compra →" : "Confirma todos los platos"}
+        <button class="btn-confirm" onclick="onConfirm()">
+          Confirmar y ver la compra →
         </button>
       </div>
     </div>`;
@@ -161,20 +142,13 @@ function renderShopping(state) {
 
 function toggleItem(i) {
   shopChecked[i] = !shopChecked[i];
-  const el  = document.getElementById(`si-${i}`);
-  const cb  = el.querySelector(".shop-cb");
+  const el = document.getElementById(`si-${i}`);
+  const cb = el.querySelector(".shop-cb");
   el.classList.toggle("checked", shopChecked[i]);
   cb.textContent = shopChecked[i] ? "✓" : "";
 }
 
 // ── Actions ───────────────────────────────────────────────────────────────────
-
-function onAccept(day, meal, btn) {
-  let state = loadCurrentWeek();
-  state = acceptSlot(state, day, meal);
-  saveCurrentWeek(state);
-  renderWeek(state);
-}
 
 function onReroll(day, meal, btn) {
   btn.style.transform = "rotate(180deg)";
@@ -223,7 +197,7 @@ function onBackToWeek() {
 function onPromote(name, btn) {
   promoteDiscovery(name);
   btn.textContent = "✓ Guardado";
-  btn.disabled = true;
+  btn.disabled    = true;
   btn.style.background = "#aaa";
   const card = document.getElementById(`promo-${encodeURIComponent(name)}`);
   if (card) setTimeout(() => card.remove(), 800);

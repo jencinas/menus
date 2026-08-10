@@ -27,8 +27,7 @@ function saveHistory(h)     { localStorage.setItem("history", JSON.stringify(h))
 function loadCurrentWeek()  { return JSON.parse(localStorage.getItem("currentWeek") || "null"); }
 function saveCurrentWeek(w) { localStorage.setItem("currentWeek", JSON.stringify(w)); }
 
-// User can add/remove dishes from their local library copy
-function loadUserDishes()    {
+function loadUserDishes() {
   const saved = localStorage.getItem("userDishes");
   return saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DISHES));
 }
@@ -67,26 +66,36 @@ function pickDish(pool, meal, exclude, { elaborateOnly = false, season = null, a
   let candidates = Object.entries(pool).filter(([n,i]) => ok(n,i)).map(([n]) => n);
 
   if (!candidates.length) {
-    // relax avoidProtein
     candidates = Object.entries(pool)
       .filter(([n,i]) => i.meals.includes(meal) && (meal !== "comida" || i.solo) && (i.seasons||[]).includes(season))
       .map(([n]) => n);
   }
   if (!candidates.length) {
-    // relax season too
     candidates = Object.entries(pool).filter(([n,i]) => i.meals.includes(meal)).map(([n]) => n);
   }
 
   return candidates.length ? candidates[Math.floor(Math.random() * candidates.length)] : null;
 }
 
+// Pick a light vegetable side for dishes that need one
+function pickSide(pool, season) {
+  season = season || currentSeason();
+  const candidates = Object.entries(pool)
+    .filter(([, i]) => !i.solo && i.protein === "vegetal" && (i.seasons || []).includes(season))
+    .map(([n]) => n);
+  if (candidates.length) return candidates[Math.floor(Math.random() * candidates.length)];
+  // fallback: ignore season
+  const all = Object.entries(pool).filter(([, i]) => !i.solo && i.protein === "vegetal").map(([n]) => n);
+  return all.length ? all[Math.floor(Math.random() * all.length)] : null;
+}
+
 function pickDiscovery(pool, meal, { category = null, elaborate = null, season = null } = {}) {
   season = season || currentSeason();
 
   function ok(info) {
-    if (!info.meals.includes(meal))                        return false;
-    if (!(info.seasons || []).includes(season))            return false;
-    if (category !== null && info.category !== category)   return false;
+    if (!info.meals.includes(meal))                          return false;
+    if (!(info.seasons || []).includes(season))              return false;
+    if (category !== null && info.category !== category)     return false;
     if (elaborate !== null && !!info.elaborate !== elaborate) return false;
     return true;
   }
@@ -94,7 +103,6 @@ function pickDiscovery(pool, meal, { category = null, elaborate = null, season =
   let candidates = Object.entries(pool).filter(([,i]) => ok(i)).map(([n]) => n);
 
   if (!candidates.length) {
-    // relax season
     candidates = Object.entries(pool)
       .filter(([,i]) => i.meals.includes(meal)
         && (category === null || i.category === category)
@@ -106,6 +114,12 @@ function pickDiscovery(pool, meal, { category = null, elaborate = null, season =
   }
 
   return candidates.length ? candidates[Math.floor(Math.random() * candidates.length)] : null;
+}
+
+function makeSlot(dishName, dishes, season, source = "known") {
+  const info = dishes[dishName];
+  const side = info?.needs_side ? pickSide(dishes, season) : null;
+  return { dish: dishName, side, source };
 }
 
 // ── Week generation ──────────────────────────────────────────────────────────
@@ -127,7 +141,7 @@ function generateWeek() {
     }) || pickDish(dishes, "comida", used, { season });
 
     daysState[day] = {};
-    daysState[day].comida = { dish: comida, accepted: false, source: "known" };
+    daysState[day].comida = makeSlot(comida, dishes, season);
     used.add(comida);
 
     const comidaProtein = dishes[comida]?.protein;
@@ -137,16 +151,14 @@ function generateWeek() {
       season, avoidProtein,
     }) || pickDish(dishes, "cena", used, { season });
 
-    daysState[day].cena = { dish: cena, accepted: false, source: "known" };
+    daysState[day].cena = makeSlot(cena, dishes, season);
     used.add(cena);
   }
 
-  // Weekday suggestion – non-elaborate
-  const weekdays   = DAYS.filter(d => !WEEKEND.has(d));
-  const wDay       = weekdays[Math.floor(Math.random() * weekdays.length)];
-  const wSugg      = pickDiscovery(discovery, "comida", { elaborate: false, season });
+  const weekdays    = DAYS.filter(d => !WEEKEND.has(d));
+  const wDay        = weekdays[Math.floor(Math.random() * weekdays.length)];
+  const wSugg       = pickDiscovery(discovery, "comida", { elaborate: false, season });
 
-  // Weekend suggestion – elaborate, 60% arroz
   const weekendDays = [...WEEKEND];
   const fDay        = weekendDays[Math.floor(Math.random() * weekendDays.length)];
   const fSugg       = Math.random() < 0.6
@@ -175,30 +187,20 @@ function generateWeek() {
 
 // ── Actions ───────────────────────────────────────────────────────────────────
 
-function acceptSlot(state, day, meal) {
-  state.days[day][meal].accepted = true;
-  return state;
-}
-
 function rerollSlot(state, day, meal) {
-  const dishes   = loadUserDishes();
-  const history  = loadHistory();
-  const exclude  = recentDishNames(history, 3);
-  const season   = state.season || currentSeason();
+  const dishes  = loadUserDishes();
+  const history = loadHistory();
+  const exclude = recentDishNames(history, 3);
+  const season  = state.season || currentSeason();
 
-  const currentDishes = new Set(
-    DAYS.flatMap(d => MEALS.map(m => state.days[d]?.[m]?.dish))
-      .filter(x => x && !(d === day && m === meal))
-  );
-  // Rebuild properly
   const currentSet = new Set();
   for (const d of DAYS) for (const m of MEALS) {
     if (d === day && m === meal) continue;
     if (state.days[d]?.[m]?.dish) currentSet.add(state.days[d][m].dish);
   }
 
-  const other   = meal === "comida" ? "cena" : "comida";
-  const otherDish   = state.days[day][other]?.dish;
+  const other        = meal === "comida" ? "cena" : "comida";
+  const otherDish    = state.days[day][other]?.dish;
   const otherProtein = dishes[otherDish]?.protein;
   const avoidProtein = otherProtein === "carne" ? "carne" : null;
   const isWeekend    = WEEKEND.has(day);
@@ -208,9 +210,8 @@ function rerollSlot(state, day, meal) {
   }) || pickDish(dishes, meal, currentSet, { season });
 
   const old = state.days[day][meal].dish;
-  state.days[day][meal] = { dish: newDish, accepted: false, source: "known" };
+  state.days[day][meal] = makeSlot(newDish, dishes, season);
 
-  // Update suggestion's known_alternative if it pointed to this slot
   for (const s of Object.values(state.suggestions)) {
     if (s.day === day && s.meal === meal && s.known_alternative === old) {
       s.known_alternative = newDish;
@@ -220,29 +221,19 @@ function rerollSlot(state, day, meal) {
 }
 
 function acceptSuggestion(state, key) {
-  const s = state.suggestions[key];
-  s.status = "accepted";
-  state.days[s.day][s.meal] = { dish: s.new_dish, accepted: true, source: "discovery" };
+  const s   = state.suggestions[key];
+  const dishes = loadUserDishes();
+  s.status  = "accepted";
+  state.days[s.day][s.meal] = makeSlot(s.new_dish, dishes, state.season, "discovery");
   return state;
 }
 
 function rejectSuggestion(state, key) {
-  const s = state.suggestions[key];
-  s.status = "rejected";
-  state.days[s.day][s.meal].dish    = s.known_alternative;
-  state.days[s.day][s.meal].accepted = false;
-  state.days[s.day][s.meal].source   = "known";
+  const s   = state.suggestions[key];
+  const dishes = loadUserDishes();
+  s.status  = "rejected";
+  state.days[s.day][s.meal] = makeSlot(s.known_alternative, dishes, state.season);
   return state;
-}
-
-function allSlotsAccepted(state) {
-  for (const day of DAYS) for (const meal of MEALS) {
-    if (!state.days[day]?.[meal]?.accepted) return false;
-  }
-  for (const s of Object.values(state.suggestions)) {
-    if (s.status === "pending") return false;
-  }
-  return true;
 }
 
 function confirmWeek(state) {
@@ -268,11 +259,14 @@ function buildShoppingList(state) {
   const missing = [];
 
   for (const day of DAYS) for (const meal of MEALS) {
-    const name = state.days[day]?.[meal]?.dish;
-    if (!name) continue;
-    const info = allDishes[name];
-    if (!info) { missing.push(name); continue; }
-    info.ingredients.forEach(i => { if (!PANTRY.has(i.toLowerCase())) ingredients.add(i); });
+    const slot = state.days[day]?.[meal];
+    if (!slot) continue;
+
+    for (const name of [slot.dish, slot.side].filter(Boolean)) {
+      const info = allDishes[name];
+      if (!info) { missing.push(name); continue; }
+      info.ingredients.forEach(i => { if (!PANTRY.has(i.toLowerCase())) ingredients.add(i); });
+    }
   }
 
   return { items: [...ingredients].sort((a,b) => a.localeCompare(b, "es")), missing };

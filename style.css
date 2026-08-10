@@ -89,6 +89,7 @@ body {
 .sugg-alt   { font-size: 12px; color: var(--text-sub); }
 .sugg-alt span { font-weight: 600; color: var(--text); }
 .sugg-note  { font-size: 12px; color: var(--orange); font-style: italic; }
+.meal-side  { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
 .sugg-link  { display: inline-block; margin: 4px 0; font-size: 13px; color: var(--green); text-decoration: underline; }
 .sugg-actions { display: flex; gap: 8px; }
 .btn-sugg-accept {

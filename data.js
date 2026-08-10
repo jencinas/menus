@@ -1,5 +1,5 @@
 const DISHES = {
-  "AlbÃ³ndigas": {
+  "Alb\u00f3ndigas": {
     "meals": [
       "comida",
       "cena"
@@ -16,13 +16,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "AlbÃ³ndigas con patatas": {
+  "Alb\u00f3ndigas con patatas": {
     "meals": [
       "comida"
     ],
@@ -38,11 +39,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Alubias": {
     "meals": [
@@ -55,14 +57,15 @@ const DISHES = {
       "chorizo",
       "morcilla",
       "patatas",
-      "pimentÃ³n"
+      "piment\u00f3n"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Arroz": {
     "meals": [
@@ -78,11 +81,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Arroz a la cubana": {
     "meals": [
@@ -94,16 +98,17 @@ const DISHES = {
       "arroz",
       "huevo",
       "tomate frito",
-      "plÃ¡tano"
+      "pl\u00e1tano"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Arroz con verduras": {
     "meals": [
@@ -113,7 +118,7 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "arroz",
-      "calabacÃ­n",
+      "calabac\u00edn",
       "pimiento",
       "zanahoria",
       "cebolla"
@@ -121,11 +126,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Arroz de pescado": {
     "meals": [
@@ -139,16 +145,17 @@ const DISHES = {
       "tomate",
       "pimiento",
       "caldo de pescado",
-      "azafrÃ¡n"
+      "azafr\u00e1n"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Arroz con calamares": {
     "meals": [
@@ -162,34 +169,36 @@ const DISHES = {
       "tomate frito",
       "cebolla",
       "caldo de pescado",
-      "azafrÃ¡n"
+      "azafr\u00e1n"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "AtÃºn": {
+  "At\u00fan": {
     "meals": [
       "cena"
     ],
     "category": "pescado",
     "elaborate": false,
     "ingredients": [
-      "atÃºn"
+      "at\u00fan"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Berenjena rellena": {
     "meals": [
@@ -206,11 +215,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Berenjenas rellenas": {
     "meals": [
@@ -227,13 +237,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "BoloÃ±esa": {
+  "Bolo\u00f1esa": {
     "meals": [
       "comida",
       "cena"
@@ -250,11 +261,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Bonito": {
     "meals": [
@@ -268,11 +280,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Bonito con tomate": {
     "meals": [
@@ -287,11 +300,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Boquerones": {
     "meals": [
@@ -302,53 +316,56 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "boquerones",
-      "limÃ³n"
+      "lim\u00f3n"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "BrÃ³coli": {
+  "Br\u00f3coli": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "brÃ³coli"
+      "br\u00f3coli"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "BrÃ³coli con gambas": {
+  "Br\u00f3coli con gambas": {
     "meals": [
       "comida"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "brÃ³coli",
+      "br\u00f3coli",
       "gambas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Burger": {
     "meals": [
@@ -367,13 +384,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Butifarra con judÃ­a blanca": {
+  "Butifarra con jud\u00eda blanca": {
     "meals": [
       "cena"
     ],
@@ -381,33 +399,35 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "butifarra",
-      "judÃ­a blanca cocida"
+      "jud\u00eda blanca cocida"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "CalabacÃ­n rehogado": {
+  "Calabac\u00edn rehogado": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "calabacÃ­n",
+      "calabac\u00edn",
       "cebolla"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Calamares": {
     "meals": [
@@ -422,13 +442,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "Calamares con calabacÃ­n": {
+  "Calamares con calabac\u00edn": {
     "meals": [
       "cena"
     ],
@@ -436,18 +457,19 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "calamares",
-      "calabacÃ­n"
+      "calabac\u00edn"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "Calamares con revuelto de calabacÃ­n": {
+  "Calamares con revuelto de calabac\u00edn": {
     "meals": [
       "cena"
     ],
@@ -455,17 +477,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "calamares",
-      "calabacÃ­n",
+      "calabac\u00edn",
       "huevo"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Carbonara": {
     "meals": [
@@ -483,11 +506,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Carne brasa": {
     "meals": [
@@ -499,11 +523,12 @@ const DISHES = {
       "carne de ternera"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Carne en salsa": {
     "meals": [
@@ -518,11 +543,12 @@ const DISHES = {
       "vino blanco"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Carne en salsa con setas y verde": {
     "meals": [
@@ -533,16 +559,17 @@ const DISHES = {
     "ingredients": [
       "carne guisar",
       "setas",
-      "judÃ­a verde",
+      "jud\u00eda verde",
       "tomate frito",
       "cebolla"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Cerdo a la plancha con patatas": {
     "meals": [
@@ -557,29 +584,31 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "ChampiÃ±ones": {
+  "Champi\u00f1ones": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "champiÃ±ones"
+      "champi\u00f1ones"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Chistorras": {
     "meals": [
@@ -593,11 +622,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "embutido"
+    "protein": "embutido",
+    "needs_side": false
   },
   "Cinta de lomo": {
     "meals": [
@@ -611,11 +641,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Cocido": {
     "meals": [
@@ -635,11 +666,12 @@ const DISHES = {
       "fideos"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Cocido sardis": {
     "meals": [
@@ -657,11 +689,12 @@ const DISHES = {
       "patatas"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Cocido Trini": {
     "meals": [
@@ -679,11 +712,12 @@ const DISHES = {
       "patatas"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Cordero al horno": {
     "meals": [
@@ -697,50 +731,53 @@ const DISHES = {
       "vino blanco"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "CuscÃºs": {
+  "Cusc\u00fas": {
     "meals": [
       "cena"
     ],
     "category": "arroz",
     "elaborate": false,
     "ingredients": [
-      "cuscÃºs",
+      "cusc\u00fas",
       "verduras variadas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "CuscÃºs con brÃ³coli y gambas": {
+  "Cusc\u00fas con br\u00f3coli y gambas": {
     "meals": [
       "comida"
     ],
     "category": "arroz",
     "elaborate": false,
     "ingredients": [
-      "cuscÃºs",
-      "brÃ³coli",
+      "cusc\u00fas",
+      "br\u00f3coli",
       "gambas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Embutido": {
     "meals": [
@@ -754,11 +791,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "embutido"
+    "protein": "embutido",
+    "needs_side": false
   },
   "Empanadas": {
     "meals": [
@@ -768,7 +806,7 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "masa de empanada",
-      "atÃºn o carne picada",
+      "at\u00fan o carne picada",
       "tomate",
       "pimiento",
       "cebolla"
@@ -776,11 +814,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Empanadillas": {
     "meals": [
@@ -790,17 +829,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "obleas de empanadilla",
-      "atÃºn o carne picada",
+      "at\u00fan o carne picada",
       "tomate frito"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Empanadillas con guisantes": {
     "meals": [
@@ -810,19 +850,20 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "obleas de empanadilla",
-      "atÃºn o carne picada",
+      "at\u00fan o carne picada",
       "guisantes"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Empanadillas con purÃ©": {
+  "Empanadillas con pur\u00e9": {
     "meals": [
       "cena"
     ],
@@ -830,17 +871,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "obleas de empanadilla",
-      "atÃºn o carne picada",
-      "patatas para purÃ©"
+      "at\u00fan o carne picada",
+      "patatas para pur\u00e9"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Emperador": {
     "meals": [
@@ -854,11 +896,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Ensalada": {
     "meals": [
@@ -875,11 +918,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Ensalada campera": {
     "meals": [
@@ -891,14 +935,15 @@ const DISHES = {
       "patata cocida",
       "tomate",
       "cebolla",
-      "atÃºn",
+      "at\u00fan",
       "huevo cocido"
     ],
     "seasons": [
       "verano"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Ensalada de garbanzos": {
     "meals": [
@@ -910,37 +955,39 @@ const DISHES = {
       "garbanzos cocidos",
       "tomate",
       "cebolla",
-      "atÃºn"
+      "at\u00fan"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "Ensalada de judÃ­as": {
+  "Ensalada de jud\u00edas": {
     "meals": [
       "comida"
     ],
     "category": "ensalada",
     "elaborate": false,
     "ingredients": [
-      "judÃ­as cocidas",
+      "jud\u00edas cocidas",
       "tomate",
       "cebolla",
-      "atÃºn"
+      "at\u00fan"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Ensalada de legumbre": {
     "meals": [
@@ -952,16 +999,17 @@ const DISHES = {
       "legumbre cocida",
       "tomate",
       "cebolla",
-      "atÃºn"
+      "at\u00fan"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Ensalada de pasta": {
     "meals": [
@@ -972,17 +1020,18 @@ const DISHES = {
     "ingredients": [
       "pasta",
       "tomate",
-      "maÃ­z",
-      "atÃºn"
+      "ma\u00edz",
+      "at\u00fan"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Ensalada de tomate": {
     "meals": [
@@ -998,11 +1047,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Ensalada verde": {
     "meals": [
@@ -1012,17 +1062,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lechuga",
-      "rÃºcula",
+      "r\u00facula",
       "tomate"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Escalivada": {
     "meals": [
@@ -1038,11 +1089,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Espinacas con gambas": {
     "meals": [
@@ -1059,7 +1111,8 @@ const DISHES = {
       "verano"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Estofado": {
     "meals": [
@@ -1075,11 +1128,12 @@ const DISHES = {
       "vino tinto"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Estofado carne": {
     "meals": [
@@ -1095,13 +1149,14 @@ const DISHES = {
       "vino tinto"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Fideos con atÃºn": {
+  "Fideos con at\u00fan": {
     "meals": [
       "comida"
     ],
@@ -1109,19 +1164,20 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "fideos",
-      "atÃºn",
+      "at\u00fan",
       "tomate frito"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "Fideos con atÃºn escabechado": {
+  "Fideos con at\u00fan escabechado": {
     "meals": [
       "comida"
     ],
@@ -1129,16 +1185,17 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "fideos",
-      "atÃºn escabechado"
+      "at\u00fan escabechado"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Filete a la plancha": {
     "meals": [
@@ -1152,11 +1209,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Filete con patatas": {
     "meals": [
@@ -1171,11 +1229,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Filete de ternera": {
     "meals": [
@@ -1189,11 +1248,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Frankfurts": {
     "meals": [
@@ -1208,13 +1268,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "embutido"
+    "protein": "embutido",
+    "needs_side": false
   },
-  "FricandÃ³": {
+  "Fricand\u00f3": {
     "meals": [
       "comida",
       "cena"
@@ -1229,13 +1290,14 @@ const DISHES = {
       "harina"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "FricandÃ³ de ternera": {
+  "Fricand\u00f3 de ternera": {
     "meals": [
       "comida"
     ],
@@ -1249,11 +1311,12 @@ const DISHES = {
       "harina"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Gallo": {
     "meals": [
@@ -1267,11 +1330,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Gallo frito con ensalada": {
     "meals": [
@@ -1288,11 +1352,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Gambajillo": {
     "meals": [
@@ -1307,11 +1372,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Gambas": {
     "meals": [
@@ -1325,11 +1391,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Garbanzos": {
     "meals": [
@@ -1345,11 +1412,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Gazpacho": {
     "meals": [
@@ -1368,9 +1436,10 @@ const DISHES = {
       "verano"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "Gazpacho de mamÃ¡": {
+  "Gazpacho de mam\u00e1": {
     "meals": [
       "comida"
     ],
@@ -1386,7 +1455,8 @@ const DISHES = {
       "verano"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Guisantes": {
     "meals": [
@@ -1400,13 +1470,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "Guisantes con jamÃ³n": {
+  "Guisantes con jam\u00f3n": {
     "meals": [
       "comida"
     ],
@@ -1414,16 +1485,17 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "guisantes",
-      "jamÃ³n serrano"
+      "jam\u00f3n serrano"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Gulas": {
     "meals": [
@@ -1438,11 +1510,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Hamburguesas": {
     "meals": [
@@ -1460,182 +1533,192 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "JamÃ³n": {
+  "Jam\u00f3n": {
     "meals": [
       "cena"
     ],
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "jamÃ³n serrano"
+      "jam\u00f3n serrano"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "embutido"
+    "protein": "embutido",
+    "needs_side": false
   },
-  "JamÃ³n y salmÃ³n": {
+  "Jam\u00f3n y salm\u00f3n": {
     "meals": [
       "cena"
     ],
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "jamÃ³n serrano",
-      "salmÃ³n ahumado"
+      "jam\u00f3n serrano",
+      "salm\u00f3n ahumado"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "JudÃ­a verde": {
+  "Jud\u00eda verde": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "judÃ­a verde"
+      "jud\u00eda verde"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "JudÃ­a verde con patata": {
+  "Jud\u00eda verde con patata": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "judÃ­a verde",
+      "jud\u00eda verde",
       "patatas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "JudÃ­a verde con patatas": {
+  "Jud\u00eda verde con patatas": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "judÃ­a verde",
+      "jud\u00eda verde",
       "patatas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "JudÃ­a verde rehogada": {
+  "Jud\u00eda verde rehogada": {
     "meals": [
       "cena"
     ],
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "judÃ­a verde",
-      "jamÃ³n en taquitos"
+      "jud\u00eda verde",
+      "jam\u00f3n en taquitos"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "JudÃ­as con Butifarras": {
+  "Jud\u00edas con Butifarras": {
     "meals": [
       "cena"
     ],
     "category": "legumbre",
     "elaborate": false,
     "ingredients": [
-      "judÃ­a blanca cocida",
+      "jud\u00eda blanca cocida",
       "butifarra"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "LacÃ³n": {
+  "Lac\u00f3n": {
     "meals": [
       "cena"
     ],
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "lacÃ³n"
+      "lac\u00f3n"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "LacÃ³n patata": {
+  "Lac\u00f3n patata": {
     "meals": [
       "cena"
     ],
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "lacÃ³n",
+      "lac\u00f3n",
       "patatas"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "LasaÃ±a": {
+  "Lasa\u00f1a": {
     "meals": [
       "comida"
     ],
     "category": "pasta",
     "elaborate": true,
     "ingredients": [
-      "placas de lasaÃ±a",
+      "placas de lasa\u00f1a",
       "carne picada",
       "tomate frito",
       "bechamel",
@@ -1644,11 +1727,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Lenguado": {
     "meals": [
@@ -1662,11 +1746,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Lenguado con cogollos": {
     "meals": [
@@ -1681,11 +1766,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Lenguado horno": {
     "meals": [
@@ -1700,11 +1786,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Lenguados": {
     "meals": [
@@ -1718,11 +1805,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Lenguados con guisantes": {
     "meals": [
@@ -1737,13 +1825,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "Lenguados con guisantes al jamÃ³n": {
+  "Lenguados con guisantes al jam\u00f3n": {
     "meals": [
       "cena"
     ],
@@ -1752,18 +1841,19 @@ const DISHES = {
     "ingredients": [
       "lenguado",
       "guisantes",
-      "jamÃ³n serrano"
+      "jam\u00f3n serrano"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "Lenguados con judÃ­a verde": {
+  "Lenguados con jud\u00eda verde": {
     "meals": [
       "cena"
     ],
@@ -1771,16 +1861,17 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lenguado",
-      "judÃ­a verde"
+      "jud\u00eda verde"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Lentejas": {
     "meals": [
@@ -1796,11 +1887,12 @@ const DISHES = {
       "patatas"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Lomo": {
     "meals": [
@@ -1815,11 +1907,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Lomo a la plancha": {
     "meals": [
@@ -1834,13 +1927,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
-  "Lomo a la plancha con judÃ­as": {
+  "Lomo a la plancha con jud\u00edas": {
     "meals": [
       "cena"
     ],
@@ -1848,16 +1942,17 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lomo de cerdo",
-      "judÃ­a verde"
+      "jud\u00eda verde"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Lomo a la sal": {
     "meals": [
@@ -1871,11 +1966,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Lomo adobado": {
     "meals": [
@@ -1889,13 +1985,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
-  "Lomo adobado con purÃ©": {
+  "Lomo adobado con pur\u00e9": {
     "meals": [
       "cena"
     ],
@@ -1903,16 +2000,17 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lomo de cerdo adobado",
-      "patatas para purÃ©"
+      "patatas para pur\u00e9"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Lomo con berenjena frita": {
     "meals": [
@@ -1927,13 +2025,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Lomo con brÃ³coli": {
+  "Lomo con br\u00f3coli": {
     "meals": [
       "cena"
     ],
@@ -1941,18 +2040,19 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lomo de cerdo",
-      "brÃ³coli"
+      "br\u00f3coli"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Lomo con calabacÃ­n rehogado": {
+  "Lomo con calabac\u00edn rehogado": {
     "meals": [
       "cena"
     ],
@@ -1960,18 +2060,19 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lomo de cerdo",
-      "calabacÃ­n"
+      "calabac\u00edn"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Lomo con tortilla de calabacÃ­n": {
+  "Lomo con tortilla de calabac\u00edn": {
     "meals": [
       "cena"
     ],
@@ -1979,17 +2080,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "lomo de cerdo",
-      "calabacÃ­n",
+      "calabac\u00edn",
       "huevo"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Lomo de cerdo": {
     "meals": [
@@ -2003,11 +2105,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Melva": {
     "meals": [
@@ -2021,11 +2124,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Merluza": {
     "meals": [
@@ -2039,11 +2143,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Mini burger": {
     "meals": [
@@ -2059,11 +2164,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Mini burgers": {
     "meals": [
@@ -2079,11 +2185,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Mongetes y Butifarras": {
     "meals": [
@@ -2092,15 +2199,16 @@ const DISHES = {
     "category": "legumbre",
     "elaborate": false,
     "ingredients": [
-      "judÃ­a blanca cocida",
+      "jud\u00eda blanca cocida",
       "butifarra"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Pantumaca": {
     "meals": [
@@ -2115,11 +2223,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Parmigiana": {
     "meals": [
@@ -2136,13 +2245,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "Pasta boloÃ±esa": {
+  "Pasta bolo\u00f1esa": {
     "meals": [
       "comida"
     ],
@@ -2158,11 +2268,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Pasta carbonara": {
     "meals": [
@@ -2180,11 +2291,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Pasta con tomate y verdura": {
     "meals": [
@@ -2195,17 +2307,18 @@ const DISHES = {
     "ingredients": [
       "pasta",
       "tomate frito",
-      "calabacÃ­n",
+      "calabac\u00edn",
       "pimiento"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Pasta integral carbonara": {
     "meals": [
@@ -2223,11 +2336,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Pasta pesto": {
     "meals": [
@@ -2243,11 +2357,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Pavo": {
     "meals": [
@@ -2261,11 +2376,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Pavo adobado": {
     "meals": [
@@ -2279,13 +2395,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
-  "Pavo adobado con brÃ³coli y garbanzos": {
+  "Pavo adobado con br\u00f3coli y garbanzos": {
     "meals": [
       "cena"
     ],
@@ -2293,17 +2410,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "pavo adobado",
-      "brÃ³coli",
+      "br\u00f3coli",
       "garbanzos cocidos"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Pavo con patatas": {
     "meals": [
@@ -2318,11 +2436,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Pescado": {
     "meals": [
@@ -2337,11 +2456,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Pescado con guisantes": {
     "meals": [
@@ -2356,11 +2476,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Pescado horno": {
     "meals": [
@@ -2375,11 +2496,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Pesto": {
     "meals": [
@@ -2395,13 +2517,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "Pez espada con purÃ©": {
+  "Pez espada con pur\u00e9": {
     "meals": [
       "comida"
     ],
@@ -2409,16 +2532,17 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "pez espada",
-      "patatas para purÃ©"
+      "patatas para pur\u00e9"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Pimientos rellenos": {
     "meals": [
@@ -2428,18 +2552,19 @@ const DISHES = {
     "elaborate": true,
     "ingredients": [
       "pimientos",
-      "carne picada o atÃºn",
+      "carne picada o at\u00fan",
       "tomate frito",
       "arroz"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Pisto": {
     "meals": [
@@ -2449,7 +2574,7 @@ const DISHES = {
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "calabacÃ­n",
+      "calabac\u00edn",
       "pimiento",
       "berenjena",
       "tomate frito",
@@ -2458,11 +2583,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Pisto con huevo": {
     "meals": [
@@ -2471,7 +2597,7 @@ const DISHES = {
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "calabacÃ­n",
+      "calabac\u00edn",
       "pimiento",
       "berenjena",
       "tomate frito",
@@ -2480,11 +2606,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Pizza": {
     "meals": [
@@ -2501,11 +2628,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Plato combinado": {
     "meals": [
@@ -2521,11 +2649,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Pollo": {
     "meals": [
@@ -2540,11 +2669,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Pollo a la plancha": {
     "meals": [
@@ -2559,11 +2689,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Pollo al curry": {
     "meals": [
@@ -2580,11 +2711,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Pollo al horno": {
     "meals": [
@@ -2600,11 +2732,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Pollo rebozado": {
     "meals": [
@@ -2621,11 +2754,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Potaje": {
     "meals": [
@@ -2639,11 +2773,12 @@ const DISHES = {
       "patatas"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Potaje chori espinacas": {
     "meals": [
@@ -2658,13 +2793,14 @@ const DISHES = {
       "patatas"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "PurÃ©": {
+  "Pur\u00e9": {
     "meals": [
       "cena"
     ],
@@ -2678,11 +2814,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Rape": {
     "meals": [
@@ -2696,11 +2833,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": true
   },
   "Rape rebozado": {
     "meals": [
@@ -2716,13 +2854,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "Revuelto de calabacÃ­n": {
+  "Revuelto de calabac\u00edn": {
     "meals": [
       "comida",
       "cena"
@@ -2730,17 +2869,18 @@ const DISHES = {
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "calabacÃ­n",
+      "calabac\u00edn",
       "huevo"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Revuelto de trigueros con pavo adobado": {
     "meals": [
@@ -2749,7 +2889,7 @@ const DISHES = {
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "espÃ¡rragos trigueros",
+      "esp\u00e1rragos trigueros",
       "huevo",
       "pavo adobado"
     ],
@@ -2758,7 +2898,8 @@ const DISHES = {
       "verano"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Revuelto de trigueros, ajetes y gambas": {
     "meals": [
@@ -2767,7 +2908,7 @@ const DISHES = {
     "category": "normal",
     "elaborate": false,
     "ingredients": [
-      "espÃ¡rragos trigueros",
+      "esp\u00e1rragos trigueros",
       "ajetes",
       "gambas",
       "huevo"
@@ -2777,7 +2918,8 @@ const DISHES = {
       "verano"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Risotto": {
     "meals": [
@@ -2794,13 +2936,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
-  "Risotto de espÃ¡rragos y setas": {
+  "Risotto de esp\u00e1rragos y setas": {
     "meals": [
       "comida"
     ],
@@ -2808,7 +2951,7 @@ const DISHES = {
     "elaborate": true,
     "ingredients": [
       "arroz arborio",
-      "espÃ¡rragos",
+      "esp\u00e1rragos",
       "setas",
       "caldo",
       "queso parmesano"
@@ -2818,7 +2961,8 @@ const DISHES = {
       "verano"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Risotto de setas y trigueros": {
     "meals": [
@@ -2829,18 +2973,19 @@ const DISHES = {
     "ingredients": [
       "arroz arborio",
       "setas",
-      "espÃ¡rragos trigueros",
+      "esp\u00e1rragos trigueros",
       "caldo",
       "queso parmesano"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Salchichas": {
     "meals": [
@@ -2854,11 +2999,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "embutido"
+    "protein": "embutido",
+    "needs_side": false
   },
   "Salchis": {
     "meals": [
@@ -2873,11 +3019,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "embutido"
+    "protein": "embutido",
+    "needs_side": false
   },
   "Salmorejo": {
     "meals": [
@@ -2889,68 +3036,72 @@ const DISHES = {
       "tomate",
       "pan",
       "huevo cocido",
-      "jamÃ³n serrano"
+      "jam\u00f3n serrano"
     ],
     "seasons": [
       "verano"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "SalmÃ³n al horno": {
+  "Salm\u00f3n al horno": {
     "meals": [
       "comida"
     ],
     "category": "pescado",
     "elaborate": false,
     "ingredients": [
-      "salmÃ³n",
+      "salm\u00f3n",
       "patatas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "SalmÃ³n horno": {
+  "Salm\u00f3n horno": {
     "meals": [
       "cena"
     ],
     "category": "pescado",
     "elaborate": false,
     "ingredients": [
-      "salmÃ³n",
+      "salm\u00f3n",
       "patatas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
-  "SalmÃ³n marinado con espÃ¡rragos": {
+  "Salm\u00f3n marinado con esp\u00e1rragos": {
     "meals": [
       "cena"
     ],
     "category": "pescado",
     "elaborate": false,
     "ingredients": [
-      "salmÃ³n marinado",
-      "espÃ¡rragos"
+      "salm\u00f3n marinado",
+      "esp\u00e1rragos"
     ],
     "seasons": [
       "primavera",
       "verano"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Sandwich": {
     "meals": [
@@ -2960,17 +3111,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "pan de molde",
-      "jamÃ³n cocido",
+      "jam\u00f3n cocido",
       "queso"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Sandwich BLT": {
     "meals": [
@@ -2987,11 +3139,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Sandwich mixto": {
     "meals": [
@@ -3001,17 +3154,18 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "pan de molde",
-      "jamÃ³n cocido",
+      "jam\u00f3n cocido",
       "queso"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Sandwich mixto con espinacas": {
     "meals": [
@@ -3021,18 +3175,19 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "pan de molde",
-      "jamÃ³n cocido",
+      "jam\u00f3n cocido",
       "queso",
       "espinacas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Sardinillas": {
     "meals": [
@@ -3046,11 +3201,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Serranito": {
     "meals": [
@@ -3061,17 +3217,18 @@ const DISHES = {
     "ingredients": [
       "pan",
       "lomo de cerdo",
-      "jamÃ³n serrano",
+      "jam\u00f3n serrano",
       "pimiento verde"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Solomillo": {
     "meals": [
@@ -3085,11 +3242,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Solomillo de cerdo con patatas": {
     "meals": [
@@ -3104,11 +3262,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Sopa": {
     "meals": [
@@ -3123,11 +3282,12 @@ const DISHES = {
       "pollo"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Sopa con escalivada": {
     "meals": [
@@ -3142,11 +3302,12 @@ const DISHES = {
       "pimiento rojo"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Sopa de pescado": {
     "meals": [
@@ -3160,11 +3321,12 @@ const DISHES = {
       "fideos"
     ],
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "pescado"
+    "protein": "pescado",
+    "needs_side": false
   },
   "Spaghetti neri": {
     "meals": [
@@ -3180,11 +3342,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Tacos": {
     "meals": [
@@ -3203,13 +3366,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
-  "Tacos (Â¿cerdo?)": {
+  "Tacos (\u00bfcerdo?)": {
     "meals": [
       "cena"
     ],
@@ -3224,11 +3388,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Tacos pollo cerdo": {
     "meals": [
@@ -3246,11 +3411,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Tapilla": {
     "meals": [
@@ -3264,11 +3430,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Tapilla con guisantes": {
     "meals": [
@@ -3283,11 +3450,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Ternera": {
     "meals": [
@@ -3301,11 +3469,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
   "Ternera a la plancha": {
     "meals": [
@@ -3319,13 +3488,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": true
   },
-  "Ternera a la plancha con espÃ¡rragos": {
+  "Ternera a la plancha con esp\u00e1rragos": {
     "meals": [
       "cena"
     ],
@@ -3333,14 +3503,15 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "ternera",
-      "espÃ¡rragos"
+      "esp\u00e1rragos"
     ],
     "seasons": [
       "primavera",
       "verano"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Tomate": {
     "meals": [
@@ -3354,13 +3525,14 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
-  "Tortilla de atÃºn": {
+  "Tortilla de at\u00fan": {
     "meals": [
       "cena"
     ],
@@ -3368,19 +3540,20 @@ const DISHES = {
     "elaborate": false,
     "ingredients": [
       "huevo",
-      "atÃºn",
+      "at\u00fan",
       "patatas"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
-  "Tortilla de berenjena y calabacÃ­n": {
+  "Tortilla de berenjena y calabac\u00edn": {
     "meals": [
       "cena"
     ],
@@ -3389,16 +3562,17 @@ const DISHES = {
     "ingredients": [
       "huevo",
       "berenjena",
-      "calabacÃ­n"
+      "calabac\u00edn"
     ],
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Tortilla de patatas": {
     "meals": [
@@ -3415,11 +3589,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Tortilla francesa": {
     "meals": [
@@ -3433,11 +3608,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "huevo"
+    "protein": "huevo",
+    "needs_side": false
   },
   "Tostada con embutido": {
     "meals": [
@@ -3452,11 +3628,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "carne"
+    "protein": "carne",
+    "needs_side": false
   },
   "Trigueros": {
     "meals": [
@@ -3465,14 +3642,15 @@ const DISHES = {
     "category": "verdura",
     "elaborate": false,
     "ingredients": [
-      "espÃ¡rragos trigueros"
+      "esp\u00e1rragos trigueros"
     ],
     "seasons": [
       "primavera",
       "verano"
     ],
     "solo": false,
-    "protein": "vegetal"
+    "protein": "vegetal",
+    "needs_side": false
   },
   "Vegetal": {
     "meals": [
@@ -3489,11 +3667,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": false,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   },
   "Arroz al horno": {
     "meals": [
@@ -3513,11 +3692,12 @@ const DISHES = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
-    "protein": "mixto"
+    "protein": "mixto",
+    "needs_side": false
   }
 };
 
@@ -3532,7 +3712,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3543,7 +3723,7 @@ const DISCOVERY = {
       "tomate",
       "laurel"
     ],
-    "note": "El clÃ¡sico viral de El Forner. FÃ¡cil y muy sabroso.",
+    "note": "El cl\u00e1sico viral de El Forner. F\u00e1cil y muy sabroso.",
     "url": "https://www.youtube.com/results?search_query=El+Forner+de+Alella+pollo+cerveza"
   },
   "Lomos de merluza con tomate": {
@@ -3557,7 +3737,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3567,7 +3747,7 @@ const DISCOVERY = {
       "pimiento",
       "cebolla"
     ],
-    "note": "Receta de El Forner. RÃ¡pida, muy jugosa.",
+    "note": "Receta de El Forner. R\u00e1pida, muy jugosa.",
     "url": "https://www.youtube.com/results?search_query=El+Forner+de+Alella+merluza+tomate"
   },
   "Lubina al horno con verduras": {
@@ -3580,7 +3760,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3588,7 +3768,7 @@ const DISCOVERY = {
       "lubina",
       "patatas",
       "pimiento",
-      "calabacÃ­n",
+      "calabac\u00edn",
       "tomate"
     ],
     "note": "El Forner de Alella. La lubina entera al horno queda muy jugosa.",
@@ -3604,7 +3784,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3626,7 +3806,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3634,10 +3814,10 @@ const DISCOVERY = {
       "bacalao desalado",
       "caldo de bacalao"
     ],
-    "note": "La tÃ©cnica es todo: temperatura baja y movimiento circular para emulsionar la gelatina.",
+    "note": "La t\u00e9cnica es todo: temperatura baja y movimiento circular para emulsionar la gelatina.",
     "url": "https://www.youtube.com/results?search_query=bacalao+pil-pil+receta"
   },
-  "AlbÃ³ndigas de bacalao con salsa verde": {
+  "Alb\u00f3ndigas de bacalao con salsa verde": {
     "meals": [
       "comida",
       "cena"
@@ -3648,7 +3828,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3672,7 +3852,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3680,11 +3860,11 @@ const DISCOVERY = {
       "dorada",
       "patatas",
       "cebolla",
-      "limÃ³n"
+      "lim\u00f3n"
     ],
     "url": "https://www.youtube.com/results?search_query=dorada+al+horno+con+patatas+receta"
   },
-  "AtÃºn encebollado": {
+  "At\u00fan encebollado": {
     "meals": [
       "comida",
       "cena"
@@ -3695,12 +3875,12 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
     "ingredients": [
-      "atÃºn fresco o en conserva",
+      "at\u00fan fresco o en conserva",
       "cebolla",
       "vino blanco"
     ],
@@ -3714,7 +3894,7 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "carne",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3725,7 +3905,7 @@ const DISCOVERY = {
       "vino tinto",
       "caldo"
     ],
-    "note": "Plato de invierno, muy meloso. CocciÃ³n lenta 1,5h.",
+    "note": "Plato de invierno, muy meloso. Cocci\u00f3n lenta 1,5h.",
     "url": "https://www.youtube.com/results?search_query=carrilleras+cerdo+salsa+receta"
   },
   "Conejo al ajillo": {
@@ -3738,7 +3918,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3759,7 +3939,7 @@ const DISCOVERY = {
     "protein": "carne",
     "seasons": [
       "primavera",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3770,10 +3950,10 @@ const DISCOVERY = {
       "pimiento",
       "romero"
     ],
-    "note": "El Forner de Alella. Plato de payÃ©s, muy sabroso.",
+    "note": "El Forner de Alella. Plato de pay\u00e9s, muy sabroso.",
     "url": "https://www.youtube.com/results?search_query=El+Forner+de+Alella+conejo+caracoles"
   },
-  "Pollo al limÃ³n": {
+  "Pollo al lim\u00f3n": {
     "meals": [
       "comida",
       "cena"
@@ -3784,13 +3964,13 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
     "ingredients": [
       "pollo",
-      "limÃ³n",
+      "lim\u00f3n",
       "romero",
       "patatas"
     ],
@@ -3806,22 +3986,22 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
     "ingredients": [
       "pollo",
       "almendras",
-      "azafrÃ¡n",
+      "azafr\u00e1n",
       "huevo duro",
       "caldo",
       "vino blanco"
     ],
-    "note": "Guiso tradicional castellano. El triturado de almendras y huevo da una salsa Ãºnica.",
+    "note": "Guiso tradicional castellano. El triturado de almendras y huevo da una salsa \u00fanica.",
     "url": "https://www.youtube.com/results?search_query=pollo+en+pepitoria+receta"
   },
-  "Muslo de pollo al horno con limÃ³n y hierbas": {
+  "Muslo de pollo al horno con lim\u00f3n y hierbas": {
     "meals": [
       "comida"
     ],
@@ -3831,13 +4011,13 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
     "ingredients": [
       "muslos de pollo",
-      "limÃ³n",
+      "lim\u00f3n",
       "tomillo",
       "patatas"
     ],
@@ -3851,7 +4031,7 @@ const DISCOVERY = {
     "elaborate": false,
     "protein": "mixto",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno",
       "primavera"
     ],
@@ -3860,9 +4040,9 @@ const DISCOVERY = {
       "garbanzos cocidos",
       "almejas",
       "tomate",
-      "pimentÃ³n"
+      "piment\u00f3n"
     ],
-    "note": "CombinaciÃ³n tierra-mar muy sabrosa. Poco conocida, siempre sorprende.",
+    "note": "Combinaci\u00f3n tierra-mar muy sabrosa. Poco conocida, siempre sorprende.",
     "url": "https://www.youtube.com/results?search_query=garbanzos+con+almejas+receta"
   },
   "Espinacas con garbanzos": {
@@ -3874,7 +4054,7 @@ const DISCOVERY = {
     "elaborate": false,
     "protein": "vegetal",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno",
       "primavera"
     ],
@@ -3883,10 +4063,10 @@ const DISCOVERY = {
       "espinacas",
       "garbanzos cocidos",
       "tomate frito",
-      "pimentÃ³n",
+      "piment\u00f3n",
       "comino"
     ],
-    "note": "ClÃ¡sico sevillano. Bueno frÃ­o y caliente.",
+    "note": "Cl\u00e1sico sevillano. Bueno fr\u00edo y caliente.",
     "url": "https://www.youtube.com/results?search_query=espinacas+con+garbanzos+sevillanas"
   },
   "Judiones con almejas": {
@@ -3897,7 +4077,7 @@ const DISCOVERY = {
     "elaborate": false,
     "protein": "mixto",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3918,7 +4098,7 @@ const DISCOVERY = {
     "elaborate": false,
     "protein": "mixto",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3941,7 +4121,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3950,9 +4130,9 @@ const DISCOVERY = {
       "huevo",
       "caldo de pollo o verduras",
       "perejil",
-      "azafrÃ¡n"
+      "azafr\u00e1n"
     ],
-    "note": "El Forner de Alella. Las patatas se rebozan y frÃ­en antes de guisarse.",
+    "note": "El Forner de Alella. Las patatas se rebozan y fr\u00eden antes de guisarse.",
     "url": "https://www.youtube.com/results?search_query=El+Forner+de+Alella+patatas+importancia"
   },
   "Pasta con gambas y tomate cherry": {
@@ -3966,7 +4146,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -3989,7 +4169,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4012,7 +4192,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4020,7 +4200,7 @@ const DISCOVERY = {
       "espaguetis",
       "pesto",
       "queso parmesano",
-      "piÃ±ones"
+      "pi\u00f1ones"
     ],
     "note": "El Forner. Simple pero requiere buen pesto (o hacerlo en casa).",
     "url": "https://www.youtube.com/results?search_query=El+Forner+de+Alella+espaguetis+pesto"
@@ -4035,7 +4215,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4058,7 +4238,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4070,7 +4250,7 @@ const DISCOVERY = {
       "tomate",
       "picada de almendras"
     ],
-    "note": "Guiso marinero catalÃ¡n. La picada de almendras al final es fundamental.",
+    "note": "Guiso marinero catal\u00e1n. La picada de almendras al final es fundamental.",
     "url": "https://www.youtube.com/results?search_query=suquet+de+peix+receta+catalana"
   },
   "Canelones": {
@@ -4081,7 +4261,7 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "carne",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno",
       "primavera"
     ],
@@ -4096,7 +4276,7 @@ const DISCOVERY = {
     "note": "Plato de domingo, se agradece hacer el doble y congelar la mitad.",
     "url": "https://www.youtube.com/results?search_query=canelones+receta+catalana"
   },
-  "Pollo a la cerveza con champiÃ±ones": {
+  "Pollo a la cerveza con champi\u00f1ones": {
     "meals": [
       "comida"
     ],
@@ -4106,14 +4286,14 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
     "ingredients": [
       "pollo",
       "cerveza",
-      "champiÃ±ones",
+      "champi\u00f1ones",
       "cebolla"
     ],
     "url": "https://www.youtube.com/results?search_query=pollo+cerveza+champinones+receta"
@@ -4126,7 +4306,7 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "carne",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4138,7 +4318,7 @@ const DISCOVERY = {
       "caldo",
       "gremolata"
     ],
-    "note": "CocciÃ³n lenta 2h. La gremolata (limÃ³n + perejil + ajo) al final lo diferencia.",
+    "note": "Cocci\u00f3n lenta 2h. La gremolata (lim\u00f3n + perejil + ajo) al final lo diferencia.",
     "url": "https://www.youtube.com/results?search_query=ossobuco+ternera+receta"
   },
   "Porra antequerana": {
@@ -4158,13 +4338,13 @@ const DISCOVERY = {
       "pimiento",
       "pepino",
       "pan",
-      "atÃºn",
+      "at\u00fan",
       "huevo duro"
     ],
-    "note": "Como el gazpacho pero mÃ¡s espeso. Muy de verano.",
+    "note": "Como el gazpacho pero m\u00e1s espeso. Muy de verano.",
     "url": "https://www.youtube.com/results?search_query=porra+antequerana+receta"
   },
-  "Arroz meloso de secreto ibÃ©rico": {
+  "Arroz meloso de secreto ib\u00e9rico": {
     "meals": [
       "comida"
     ],
@@ -4172,19 +4352,19 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "carne",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno",
       "primavera"
     ],
     "solo": true,
     "ingredients": [
       "arroz",
-      "secreto ibÃ©rico",
+      "secreto ib\u00e9rico",
       "caldo",
       "cebolla",
-      "pimentÃ³n"
+      "piment\u00f3n"
     ],
-    "note": "El Forner de Alella. El secreto ibÃ©rico en arroz meloso es una revelaciÃ³n.",
+    "note": "El Forner de Alella. El secreto ib\u00e9rico en arroz meloso es una revelaci\u00f3n.",
     "url": "https://www.youtube.com/results?search_query=El+Forner+de+Alella+arroz+meloso+secreto+iberico"
   },
   "Risotto de setas y trufa": {
@@ -4195,7 +4375,7 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "vegetal",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4219,7 +4399,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4227,13 +4407,13 @@ const DISCOVERY = {
       "arroz",
       "pollo",
       "conejo",
-      "judÃ­a verde plana",
-      "garrofÃ³n",
+      "jud\u00eda verde plana",
+      "garrof\u00f3n",
       "tomate",
-      "azafrÃ¡n",
+      "azafr\u00e1n",
       "caldo"
     ],
-    "note": "La paella clÃ¡sica. Buen primer paso: fondo de sofrito + socarrat.",
+    "note": "La paella cl\u00e1sica. Buen primer paso: fondo de sofrito + socarrat.",
     "url": "https://www.youtube.com/results?search_query=paella+valenciana+receta+autentica"
   },
   "Paella mixta": {
@@ -4246,7 +4426,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4256,10 +4436,10 @@ const DISCOVERY = {
       "gambas",
       "calamares",
       "mejillones",
-      "judÃ­a verde",
+      "jud\u00eda verde",
       "pimiento",
       "tomate",
-      "azafrÃ¡n",
+      "azafr\u00e1n",
       "caldo"
     ],
     "url": "https://www.youtube.com/results?search_query=paella+mixta+receta"
@@ -4274,7 +4454,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4285,7 +4465,7 @@ const DISCOVERY = {
       "mejillones",
       "almejas",
       "tomate",
-      "azafrÃ¡n",
+      "azafr\u00e1n",
       "caldo de pescado"
     ],
     "url": "https://www.youtube.com/results?search_query=paella+de+marisco+receta"
@@ -4300,7 +4480,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4312,10 +4492,10 @@ const DISCOVERY = {
       "caldo de pescado",
       "alioli"
     ],
-    "note": "Clave: dorar bien el sofrito antes de aÃ±adir la tinta.",
+    "note": "Clave: dorar bien el sofrito antes de a\u00f1adir la tinta.",
     "url": "https://www.youtube.com/results?search_query=arroz+negro+receta"
   },
-  "FideuÃ¡": {
+  "Fideu\u00e1": {
     "meals": [
       "comida"
     ],
@@ -4325,7 +4505,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4351,7 +4531,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4362,9 +4542,9 @@ const DISCOVERY = {
       "mejillones",
       "tomate",
       "caldo de pescado",
-      "azafrÃ¡n"
+      "azafr\u00e1n"
     ],
-    "note": "VersiÃ³n caldosa, mÃ¡s fÃ¡cil de bordar que la seca.",
+    "note": "Versi\u00f3n caldosa, m\u00e1s f\u00e1cil de bordar que la seca.",
     "url": "https://www.youtube.com/results?search_query=arroz+caldoso+marisco+receta"
   },
   "Arroz meloso de costillas": {
@@ -4375,7 +4555,7 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "carne",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno",
       "primavera"
     ],
@@ -4400,7 +4580,7 @@ const DISCOVERY = {
     "seasons": [
       "primavera",
       "verano",
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
@@ -4409,9 +4589,9 @@ const DISCOVERY = {
       "bogavante",
       "tomate",
       "caldo de pescado",
-      "azafrÃ¡n"
+      "azafr\u00e1n"
     ],
-    "note": "Para ocasiÃ³n especial, ingrediente caro.",
+    "note": "Para ocasi\u00f3n especial, ingrediente caro.",
     "url": "https://www.youtube.com/results?search_query=arroz+con+bogavante+receta"
   },
   "Arroz con pato": {
@@ -4422,7 +4602,7 @@ const DISCOVERY = {
     "elaborate": true,
     "protein": "carne",
     "seasons": [
-      "otoÃ±o",
+      "oto\u00f1o",
       "invierno"
     ],
     "solo": true,
