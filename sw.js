@@ -1,5 +1,5 @@
-const CACHE = "menus-v1";
-const SHELL = ["/", "/index.html", "/style.css", "/data.js", "/planner.js", "/app.js", "/manifest.json"];
+const CACHE = "menus-v2";
+const SHELL = ["/menus/", "/menus/index.html", "/menus/style.css", "/menus/data.js", "/menus/planner.js", "/menus/app.js", "/menus/manifest.json"];
 
 self.addEventListener("install", e =>
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()))
