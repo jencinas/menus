@@ -2210,26 +2210,6 @@ const DISHES = {
     "protein": "mixto",
     "needs_side": false
   },
-  "Pantumaca": {
-    "meals": [
-      "cena"
-    ],
-    "category": "normal",
-    "elaborate": false,
-    "ingredients": [
-      "pan",
-      "tomate maduro"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": false,
-    "protein": "vegetal",
-    "needs_side": false
-  },
   "Parmigiana": {
     "meals": [
       "cena"
@@ -3678,6 +3658,27 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "mixto",
+    "needs_side": false
+  },
+  "Pantumaca con embutido": {
+    "meals": [
+      "cena"
+    ],
+    "category": "normal",
+    "elaborate": false,
+    "ingredients": [
+      "pan",
+      "tomate maduro",
+      "embutido variado"
+    ],
+    "seasons": [
+      "primavera",
+      "verano",
+      "oto\u00f1o",
+      "invierno"
+    ],
+    "solo": true,
+    "protein": "embutido",
     "needs_side": false
   }
 };
