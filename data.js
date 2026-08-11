@@ -67,27 +67,6 @@ const DISHES = {
     "protein": "mixto",
     "needs_side": false
   },
-  "Arroz": {
-    "meals": [
-      "comida"
-    ],
-    "category": "arroz",
-    "elaborate": false,
-    "ingredients": [
-      "arroz",
-      "tomate frito",
-      "cebolla"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": true,
-    "protein": "mixto",
-    "needs_side": true
-  },
   "Arroz a la cubana": {
     "meals": [
       "comida"
@@ -840,7 +819,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "carne",
-    "needs_side": false
+    "needs_side": true
   },
   "Empanadillas con guisantes": {
     "meals": [

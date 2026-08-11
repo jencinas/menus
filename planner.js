@@ -77,14 +77,19 @@ function pickDish(pool, meal, exclude, { elaborateOnly = false, season = null, a
   return candidates.length ? candidates[Math.floor(Math.random() * candidates.length)] : null;
 }
 
-// Pick a light vegetable side for dishes that need one
-function pickSide(pool, season) {
+// Pick a light vegetable side for dishes that need one, avoiding repeats
+function pickSide(pool, season, usedSides = new Set()) {
   season = season || currentSeason();
-  const candidates = Object.entries(pool)
-    .filter(([, i]) => !i.solo && i.protein === "vegetal" && (i.seasons || []).includes(season))
+  const fresh = Object.entries(pool)
+    .filter(([n, i]) => !i.solo && i.protein === "vegetal" && (i.seasons || []).includes(season) && !usedSides.has(n))
     .map(([n]) => n);
-  if (candidates.length) return candidates[Math.floor(Math.random() * candidates.length)];
-  // fallback: ignore season
+  if (fresh.length) return fresh[Math.floor(Math.random() * fresh.length)];
+  // relax season
+  const noSeason = Object.entries(pool)
+    .filter(([n, i]) => !i.solo && i.protein === "vegetal" && !usedSides.has(n))
+    .map(([n]) => n);
+  if (noSeason.length) return noSeason[Math.floor(Math.random() * noSeason.length)];
+  // last resort: allow repeats
   const all = Object.entries(pool).filter(([, i]) => !i.solo && i.protein === "vegetal").map(([n]) => n);
   return all.length ? all[Math.floor(Math.random() * all.length)] : null;
 }
@@ -116,9 +121,9 @@ function pickDiscovery(pool, meal, { category = null, elaborate = null, season =
   return candidates.length ? candidates[Math.floor(Math.random() * candidates.length)] : null;
 }
 
-function makeSlot(dishName, dishes, season, source = "known") {
+function makeSlot(dishName, dishes, season, source = "known", usedSides = new Set()) {
   const info = dishes[dishName];
-  const side = info?.needs_side ? pickSide(dishes, season) : null;
+  const side = info?.needs_side ? pickSide(dishes, season, usedSides) : null;
   return { dish: dishName, side, source };
 }
 
@@ -133,6 +138,8 @@ function generateWeek() {
   const season    = currentSeason();
   const daysState = {};
 
+  const usedSides = new Set();
+
   for (const day of DAYS) {
     const isWeekend = WEEKEND.has(day);
 
@@ -141,7 +148,8 @@ function generateWeek() {
     }) || pickDish(dishes, "comida", used, { season });
 
     daysState[day] = {};
-    daysState[day].comida = makeSlot(comida, dishes, season);
+    daysState[day].comida = makeSlot(comida, dishes, season, "known", usedSides);
+    if (daysState[day].comida.side) usedSides.add(daysState[day].comida.side);
     used.add(comida);
 
     const comidaProtein = dishes[comida]?.protein;
@@ -151,7 +159,8 @@ function generateWeek() {
       season, avoidProtein,
     }) || pickDish(dishes, "cena", used, { season });
 
-    daysState[day].cena = makeSlot(cena, dishes, season);
+    daysState[day].cena = makeSlot(cena, dishes, season, "known", usedSides);
+    if (daysState[day].cena.side) usedSides.add(daysState[day].cena.side);
     used.add(cena);
   }
 
@@ -209,8 +218,11 @@ function rerollSlot(state, day, meal) {
     elaborateOnly: isWeekend && meal === "comida", season, avoidProtein,
   }) || pickDish(dishes, meal, currentSet, { season });
 
+  const usedSides = new Set(
+    DAYS.flatMap(d => MEALS.map(m => state.days[d]?.[m]?.side)).filter(Boolean)
+  );
   const old = state.days[day][meal].dish;
-  state.days[day][meal] = makeSlot(newDish, dishes, season);
+  state.days[day][meal] = makeSlot(newDish, dishes, season, "known", usedSides);
 
   for (const s of Object.values(state.suggestions)) {
     if (s.day === day && s.meal === meal && s.known_alternative === old) {
