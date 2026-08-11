@@ -123,8 +123,26 @@ function pickDiscovery(pool, meal, { category = null, elaborate = null, season =
 
 function makeSlot(dishName, dishes, season, source = "known", usedSides = new Set()) {
   const info = dishes[dishName];
-  const side = info?.needs_side ? pickSide(dishes, season, usedSides) : null;
+  // fixed_side takes priority; otherwise pick randomly if needs_side
+  const side = info?.fixed_side || (info?.needs_side ? pickSide(dishes, season, usedSides) : null);
   return { dish: dishName, side, source };
+}
+
+function addUserDish(entry) {
+  // entry: { name, fixed_side?, meals, category, protein, elaborate, ingredients }
+  const dishes = loadUserDishes();
+  dishes[entry.name] = {
+    meals:       entry.meals,
+    category:    entry.category,
+    elaborate:   entry.elaborate || false,
+    ingredients: entry.ingredients,
+    seasons:     ["primavera","verano","otoño","invierno"],
+    solo:        true,
+    protein:     entry.protein,
+    needs_side:  false,
+    fixed_side:  entry.fixed_side || null,
+  };
+  saveUserDishes(dishes);
 }
 
 // ── Week generation ──────────────────────────────────────────────────────────

@@ -97,6 +97,7 @@ function renderWeek(state) {
         <button class="btn-confirm" onclick="onConfirm()">
           Confirmar y ver la compra →
         </button>
+        <button class="btn-add-dish" onclick="onAddDish()">+ Añadir plato</button>
       </div>
     </div>`;
 }
@@ -205,6 +206,91 @@ function onNewWeek() {
 function onBackToWeek() {
   const state = loadCurrentWeek();
   if (state) renderWeek(state);
+}
+
+function onAddDish() {
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    <div class="page active" id="page-add">
+      <div class="shop-header">
+        <button class="btn-back" onclick="onBackToWeek()">← Volver</button>
+      </div>
+      <div class="shop-title">Añadir plato</div>
+
+      <div class="add-form">
+        <label class="field-label">Nombre del plato *</label>
+        <input id="f-name" class="field-input" type="text" placeholder="Ej: Pollo al ajillo">
+
+        <label class="field-label">Acompañamiento (opcional)</label>
+        <input id="f-side" class="field-input" type="text" placeholder="Ej: Patatas fritas">
+
+        <label class="field-label">Comida / Cena</label>
+        <div class="field-checks">
+          <label><input type="checkbox" id="f-comida" checked> Comida</label>
+          <label><input type="checkbox" id="f-cena" checked> Cena</label>
+        </div>
+
+        <label class="field-label">Categoría</label>
+        <select id="f-cat" class="field-input">
+          <option value="normal">Normal</option>
+          <option value="pescado">Pescado</option>
+          <option value="pasta">Pasta</option>
+          <option value="arroz">Arroz</option>
+          <option value="legumbre">Legumbre</option>
+          <option value="verdura">Verdura</option>
+          <option value="ensalada">Ensalada</option>
+          <option value="sandwich">Sandwich</option>
+        </select>
+
+        <label class="field-label">Proteína principal</label>
+        <select id="f-prot" class="field-input">
+          <option value="carne">Carne</option>
+          <option value="pescado">Pescado</option>
+          <option value="huevo">Huevo</option>
+          <option value="vegetal">Vegetal</option>
+          <option value="embutido">Embutido</option>
+          <option value="mixto">Mixto</option>
+        </select>
+
+        <div class="field-checks" style="margin-top:8px">
+          <label><input type="checkbox" id="f-elab"> Solo fines de semana (elaborado)</label>
+        </div>
+
+        <label class="field-label" style="margin-top:8px">Ingredientes (separados por coma)</label>
+        <textarea id="f-ingr" class="field-input field-textarea" placeholder="Ej: pollo, limón, ajo, patatas"></textarea>
+
+        <button class="btn-confirm" style="margin-top:16px" onclick="onSaveDish()">Guardar plato</button>
+      </div>
+    </div>`;
+}
+
+function onSaveDish() {
+  const name  = document.getElementById("f-name").value.trim();
+  if (!name) { alert("El nombre es obligatorio."); return; }
+
+  const meals = [];
+  if (document.getElementById("f-comida").checked) meals.push("comida");
+  if (document.getElementById("f-cena").checked)   meals.push("cena");
+  if (!meals.length) { alert("Selecciona al menos una comida."); return; }
+
+  const rawIngr = document.getElementById("f-ingr").value;
+  const ingredients = rawIngr.split(",").map(s => s.trim()).filter(Boolean);
+
+  addUserDish({
+    name,
+    fixed_side: document.getElementById("f-side").value.trim() || null,
+    meals,
+    category:  document.getElementById("f-cat").value,
+    protein:   document.getElementById("f-prot").value,
+    elaborate: document.getElementById("f-elab").checked,
+    ingredients,
+  });
+
+  // Confirmation then back
+  const btn = document.querySelector("#page-add .btn-confirm");
+  btn.textContent = "✓ Guardado";
+  btn.disabled = true;
+  setTimeout(() => onBackToWeek(), 800);
 }
 
 function onPromote(name, btn) {
