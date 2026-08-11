@@ -191,7 +191,7 @@ body {
 .btn-confirm:not(:disabled):active { opacity: .8; }
 
 /* ── Shopping page ── */
-.shop-header { padding: calc(16px + env(safe-area-inset-top)) 20px 4px; display: flex; align-items: center; gap: 12px; }
+.shop-header { padding: max(52px, calc(16px + env(safe-area-inset-top))) 20px 4px; display: flex; align-items: center; gap: 12px; }
 .btn-back {
   background: none; border: none; color: var(--green);
   font-size: 16px; font-weight: 600; cursor: pointer;
