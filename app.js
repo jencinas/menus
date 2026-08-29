@@ -50,9 +50,6 @@ function renderWeek(state) {
   }).join("");
 
   const daysHTML = DAYS.map(day => {
-    const isWeekend = WEEKEND.has(day);
-    const badge     = isWeekend ? `<span class="day-badge">Finde</span>` : "";
-
     const rows = MEALS.map(meal => {
       const slot = state.days[day]?.[meal];
       if (!slot) return "";
@@ -66,13 +63,13 @@ function renderWeek(state) {
           ${isDisc ? `<div class="meal-tag">★ Nuevo plato</div>` : ""}
         </div>
         <div class="meal-actions">
-          <button class="btn-reroll" title="Cambiar" onclick="onReroll('${day}','${meal}',this)">↻</button>
+          <button class="btn-edit" title="Editar" onclick="onEdit('${day}','${meal}')">✎</button>
         </div>
       </div>`;
     }).join("");
 
     return `<div class="day-card">
-      <div class="day-header"><div class="day-name">${day}</div>${badge}</div>
+      <div class="day-header"><div class="day-name">${day}</div></div>
       ${rows}
     </div>`;
   }).join("");
@@ -164,12 +161,59 @@ function toggleItem(i) {
 
 // ── Actions ───────────────────────────────────────────────────────────────────
 
-function onReroll(day, meal, btn) {
-  btn.style.transform = "rotate(180deg)";
+// ── Dish picker ───────────────────────────────────────────────────────────────
+
+function onEdit(day, meal) {
+  const dishes = loadUserDishes();
+  const pool = Object.entries(dishes)
+    .filter(([, i]) => i.meals.includes(meal) && i.solo)
+    .sort(([a], [b]) => a.localeCompare(b, "es"));
+
+  window._pickerCtx = { day, meal, pool };
+
+  const el = document.createElement("div");
+  el.id = "dish-picker";
+  el.className = "dish-picker";
+  el.innerHTML = `
+    <div class="picker-backdrop" onclick="closePicker()"></div>
+    <div class="picker-sheet">
+      <div class="picker-header">
+        <input class="picker-search" id="picker-input" type="search" placeholder="Buscar plato…" oninput="filterPicker()" autocomplete="off">
+        <button class="picker-close" onclick="closePicker()">✕</button>
+      </div>
+      <div class="picker-list" id="picker-list">${_pickerItemsHTML(pool, day, meal)}</div>
+    </div>`;
+  document.body.appendChild(el);
+  setTimeout(() => document.getElementById("picker-input")?.focus(), 50);
+}
+
+function _pickerItemsHTML(pool, day, meal) {
+  if (!pool.length) return `<div class="picker-empty">Sin resultados</div>`;
+  return pool.map(([name, info]) =>
+    `<div class="picker-item" data-name="${name.replace(/"/g,"&quot;")}" onclick="onSelectDish('${day}','${meal}',this.dataset.name)">
+      <div class="picker-name">${name}</div>
+      <div class="picker-meta">${info.category || ""}</div>
+    </div>`).join("");
+}
+
+function filterPicker() {
+  const q = (document.getElementById("picker-input")?.value || "").toLowerCase();
+  const { pool, day, meal } = window._pickerCtx;
+  const filtered = q ? pool.filter(([n]) => n.toLowerCase().includes(q)) : pool;
+  document.getElementById("picker-list").innerHTML = _pickerItemsHTML(filtered, day, meal);
+}
+
+function closePicker() {
+  document.getElementById("dish-picker")?.remove();
+  window._pickerCtx = null;
+}
+
+function onSelectDish(day, meal, dishName) {
+  closePicker();
   let state = loadCurrentWeek();
-  state = rerollSlot(state, day, meal);
+  state = setSlot(state, day, meal, dishName);
   saveCurrentWeek(state);
-  setTimeout(() => renderWeek(state), 200);
+  renderWeek(state);
 }
 
 function onSuggAccept(key) {

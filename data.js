@@ -1252,7 +1252,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "embutido",
-    "needs_side": false
+    "needs_side": true
   },
   "Fricand\u00f3": {
     "meals": [
@@ -1400,8 +1400,7 @@ const DISHES = {
   },
   "Gazpacho": {
     "meals": [
-      "comida",
-      "cena"
+      "comida"
     ],
     "category": "ensalada",
     "elaborate": false,
@@ -2718,7 +2717,7 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "carne",
-    "needs_side": false
+    "needs_side": true
   },
   "Potaje": {
     "meals": [
@@ -2968,7 +2967,7 @@ const DISHES = {
   },
   "Salmorejo": {
     "meals": [
-      "cena"
+      "comida"
     ],
     "category": "ensalada",
     "elaborate": false,
@@ -3313,51 +3312,6 @@ const DISHES = {
     "protein": "carne",
     "needs_side": false
   },
-  "Tacos (\u00bfcerdo?)": {
-    "meals": [
-      "cena"
-    ],
-    "category": "normal",
-    "elaborate": false,
-    "ingredients": [
-      "tortillas de trigo",
-      "cerdo",
-      "lechuga",
-      "queso"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": true,
-    "protein": "carne",
-    "needs_side": false
-  },
-  "Tacos pollo cerdo": {
-    "meals": [
-      "cena"
-    ],
-    "category": "normal",
-    "elaborate": false,
-    "ingredients": [
-      "tortillas de trigo",
-      "pollo",
-      "cerdo",
-      "lechuga",
-      "queso"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": true,
-    "protein": "carne",
-    "needs_side": false
-  },
   "Tapilla": {
     "meals": [
       "cena"
@@ -3555,26 +3509,6 @@ const DISHES = {
     "protein": "huevo",
     "needs_side": true
   },
-  "Tostada con embutido": {
-    "meals": [
-      "cena"
-    ],
-    "category": "normal",
-    "elaborate": false,
-    "ingredients": [
-      "pan",
-      "embutido variado"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": true,
-    "protein": "carne",
-    "needs_side": false
-  },
   "Trigueros": {
     "meals": [
       "comida"
@@ -3590,28 +3524,6 @@ const DISHES = {
     ],
     "solo": false,
     "protein": "vegetal",
-    "needs_side": false
-  },
-  "Vegetal": {
-    "meals": [
-      "cena"
-    ],
-    "category": "sandwich",
-    "elaborate": false,
-    "ingredients": [
-      "pan de molde",
-      "lechuga",
-      "tomate",
-      "mayonesa"
-    ],
-    "seasons": [
-      "primavera",
-      "verano",
-      "oto\u00f1o",
-      "invierno"
-    ],
-    "solo": true,
-    "protein": "mixto",
     "needs_side": false
   },
   "Arroz al horno": {
@@ -3658,6 +3570,74 @@ const DISHES = {
     ],
     "solo": true,
     "protein": "embutido",
+    "needs_side": false
+  },
+  "Sandwich vegetal": {
+    "meals": [
+      "cena"
+    ],
+    "category": "sandwich",
+    "elaborate": false,
+    "ingredients": [
+      "pan de molde",
+      "lechuga",
+      "tomate",
+      "mayonesa"
+    ],
+    "seasons": [
+      "primavera",
+      "verano",
+      "oto\u00f1o",
+      "invierno"
+    ],
+    "solo": true,
+    "protein": "mixto",
+    "needs_side": false
+  },
+  "Tacos pollo": {
+    "meals": [
+      "comida",
+      "cena"
+    ],
+    "category": "normal",
+    "elaborate": false,
+    "ingredients": [
+      "tortillas de trigo",
+      "pollo",
+      "lechuga",
+      "queso"
+    ],
+    "seasons": [
+      "primavera",
+      "verano",
+      "oto\u00f1o",
+      "invierno"
+    ],
+    "solo": true,
+    "protein": "carne",
+    "needs_side": false
+  },
+  "Tacos cerdo": {
+    "meals": [
+      "comida",
+      "cena"
+    ],
+    "category": "normal",
+    "elaborate": false,
+    "ingredients": [
+      "tortillas de trigo",
+      "cerdo",
+      "lechuga",
+      "queso"
+    ],
+    "seasons": [
+      "primavera",
+      "verano",
+      "oto\u00f1o",
+      "invierno"
+    ],
+    "solo": true,
+    "protein": "carne",
     "needs_side": false
   }
 };
